@@ -69,9 +69,27 @@ computer_choice = random.randint(0, 2)
 # elif user_choice == 2:
 #   print(scissors, scissors_reversed)
 
+# User choice == rock
 if user_choice == 0 and computer_choice == 0:
   print(rock, rock_reversed, "It's a draw.")
 elif user_choice == 0 and computer_choice == 1:
   print(rock, paper_reversed, "Paper covers rock. You lose.")
 elif user_choice == 0 and computer_choice == 2:
   print(rock, scissors_reversed, "Rock smashes scissors. You win!")
+scissors
+
+# User choice == paper
+if user_choice == 1 and computer_choice == 0:
+  print(paper, rock_reversed, "Paper covers rock. You win!")
+elif user_choice == 1 and computer_choice == 1:
+  print(paper, paper_reversed, "It's a draw.")
+elif user_choice == 1 and computer_choice == 2:
+  print(paper, scissors_reversed, "Scissors cut paper. You lose.")
+
+# User choice == scissors
+if user_choice == 2 and computer_choice == 0:
+  print(scissors, rock_reversed, "Rock smashes scissors. You lose.")
+elif user_choice == 2 and computer_choice == 1:
+  print(scissors, paper_reversed, "Scissors cut paper. You win!")
+elif user_choice == 2 and computer_choice == 2:
+  print(scissors, scissors_reversed, "It's a draw.")
