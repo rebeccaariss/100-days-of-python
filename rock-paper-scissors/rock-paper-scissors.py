@@ -27,7 +27,16 @@ scissors = """
 ---.__(___)
 """
 
-print(random.randint(0, 10))
-print(rock, paper, scissors)
+# print(random.randint(0, 10))
+# print(rock, paper, scissors)
 
 # ASCII art from https://gist.github.com/wynand1004/b5c521ea8392e9c6bfe101b025c39abe
+
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors:  "))
+
+if user_choice == 0:
+  print(rock)
+elif user_choice == 1:
+  print(paper)
+elif user_choice == 2:
+  print(scissors)
