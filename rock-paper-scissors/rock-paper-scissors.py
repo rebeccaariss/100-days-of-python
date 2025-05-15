@@ -1,31 +1,37 @@
-import random
+import random, time
 
-rock = """
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-"""
+# ASCII art from https://gist.github.com/wynand1004/b5c521ea8392e9c6bfe101b025c39abe
 
-paper = """
-     _______
----'    ____)____
-           ______)
+user_choice_images = {
+    0: """
+      _______
+  ---'   ____)
+        (_____)
+        (_____)
+        (____)
+  ---.__(___)
+  """,
+  1: """
+      _______
+  ---'    ____)___
+            ______)
+            _______)
           _______)
-         _______)
----.__________)
-"""
+  ---.__________)
+  """,
+  2: """
+      _______
+  ---'   ____)____
+            ______)
+        __________)
+        (____)
+  ---.__(___)
+  """,
+}
 
-scissors = """
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-"""
+computer_choice_images = {
+  
+}
 
 rock_reversed = """
                                       _______
@@ -54,42 +60,30 @@ scissors_reversed = """
                                          (___)__.---
 """
 
-# print(random.randint(0, 10))
-# print(rock, paper, scissors)
-
-# ASCII art from https://gist.github.com/wynand1004/b5c521ea8392e9c6bfe101b025c39abe
-
 user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors:  "))
 computer_choice = random.randint(0, 2)
 
-# if user_choice == 0:
-#   print(rock, rock_reversed)
-# elif user_choice == 1:
-#   print(paper, paper_reversed)
-# elif user_choice == 2:
-#   print(scissors, scissors_reversed)
-
 # User choice == rock
 if user_choice == 0 and computer_choice == 0:
-  print(rock, rock_reversed, "It's a draw.")
+  # TODO: Add you chose x, computer chose y, time delays, newlines \n, case for invalid number "you lose". ALTERNATIVE SOLUTION is to use 0, 1, 2. Refactor for that. Then images go into a list (array) for 0, 1, 2, using indexing. Or a dict might be tidier because you can collapse it in the code.
+  print(user_choice_images[0], rock_reversed, "It's a draw.")
 elif user_choice == 0 and computer_choice == 1:
-  print(rock, paper_reversed, "Paper covers rock. You lose.")
+  print(user_choice_images[0], paper_reversed, "Paper covers rock. You lose.")
 elif user_choice == 0 and computer_choice == 2:
-  print(rock, scissors_reversed, "Rock smashes scissors. You win!")
-scissors
+  print(user_choice_images[0], scissors_reversed, "Rock smashes scissors. You win!")
 
 # User choice == paper
 if user_choice == 1 and computer_choice == 0:
-  print(paper, rock_reversed, "Paper covers rock. You win!")
+  print(user_choice_images[1], rock_reversed, "Paper covers rock. You win!")
 elif user_choice == 1 and computer_choice == 1:
-  print(paper, paper_reversed, "It's a draw.")
+  print(user_choice_images[1], paper_reversed, "It's a draw.")
 elif user_choice == 1 and computer_choice == 2:
-  print(paper, scissors_reversed, "Scissors cut paper. You lose.")
+  print(user_choice_images[1], scissors_reversed, "Scissors cut paper. You lose.")
 
 # User choice == scissors
 if user_choice == 2 and computer_choice == 0:
-  print(scissors, rock_reversed, "Rock smashes scissors. You lose.")
+  print(user_choice_images[2], rock_reversed, "Rock smashes scissors. You lose.")
 elif user_choice == 2 and computer_choice == 1:
-  print(scissors, paper_reversed, "Scissors cut paper. You win!")
+  print(user_choice_images[2], paper_reversed, "Scissors cut paper. You win!")
 elif user_choice == 2 and computer_choice == 2:
-  print(scissors, scissors_reversed, "It's a draw.")
+  print(user_choice_images[2], scissors_reversed, "It's a draw.")
