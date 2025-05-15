@@ -27,6 +27,33 @@ scissors = """
 ---.__(___)
 """
 
+rock_reversed = """
+                                      _______
+                                    _(____   '---
+                                   (_____)
+                                   (_____)
+                                    (____)
+                                     (___)__.---
+"""
+
+paper_reversed = """
+                                          _______
+                                     ____(____    '---
+                                    (______
+                                   (_______
+                                   (_______
+                                     (__________.---
+"""
+
+scissors_reversed = """
+                                          _______
+                                     ____(____   '---
+                                    (______
+                                   (__________
+                                        (____)
+                                         (___)__.---
+"""
+
 # print(random.randint(0, 10))
 # print(rock, paper, scissors)
 
@@ -35,8 +62,8 @@ scissors = """
 user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors:  "))
 
 if user_choice == 0:
-  print(rock)
+  print(rock, rock_reversed)
 elif user_choice == 1:
-  print(paper)
+  print(paper, paper_reversed)
 elif user_choice == 2:
-  print(scissors)
+  print(scissors, scissors_reversed)
