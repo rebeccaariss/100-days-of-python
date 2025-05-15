@@ -60,10 +60,18 @@ scissors_reversed = """
 # ASCII art from https://gist.github.com/wynand1004/b5c521ea8392e9c6bfe101b025c39abe
 
 user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors:  "))
+computer_choice = random.randint(0, 2)
 
-if user_choice == 0:
-  print(rock, rock_reversed)
-elif user_choice == 1:
-  print(paper, paper_reversed)
-elif user_choice == 2:
-  print(scissors, scissors_reversed)
+# if user_choice == 0:
+#   print(rock, rock_reversed)
+# elif user_choice == 1:
+#   print(paper, paper_reversed)
+# elif user_choice == 2:
+#   print(scissors, scissors_reversed)
+
+if user_choice == 0 and computer_choice == 0:
+  print(rock, rock_reversed, "It's a draw.")
+elif user_choice == 0 and computer_choice == 1:
+  print(rock, paper_reversed, "Paper covers rock. You lose.")
+elif user_choice == 0 and computer_choice == 2:
+  print(rock, scissors_reversed, "Rock smashes scissors. You win!")
