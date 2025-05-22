@@ -56,12 +56,24 @@ computer_choice_images = {
 """
 }
 
+outcome_messages = {
+    (0, 0): "It's a draw.",
+    (0, 1): "Paper covers rock. You lose.",
+    (0, 2): "Rock smashes scissors. You win!",
+    (1, 0): "Paper covers rock. You win!",
+    (1, 1): "It's a draw.",
+    (1, 2): "Scissors cut paper. You lose.",
+    (2, 0): "Rock smashes scissors. You lose.",
+    (2, 1): "Scissors cut paper. You win!",
+    (2, 2): "It's a draw."
+}
+
 user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors:  "))
 computer_choice = random.randint(0, 2)
 
 # User choice == rock
 if user_choice == 0 and computer_choice == 0:
-  # TODO: Add you chose x, computer chose y, time delays, newlines \n, case for invalid number "you lose". ALTERNATIVE SOLUTION is to use 0, 1, 2. Refactor for that. Then images go into a list (array) for 0, 1, 2, using indexing. Or a dict might be tidier because you can collapse it in the code.
+  # TODO: Add you chose x, computer chose y, time delays, newlines \n, case for invalid number "you lose". ALTERNATIVE SOLUTION is to use 0, 1, 2. Refactor for that.
   print(user_choice_images[0], computer_choice_images[0], "It's a draw.")
 elif user_choice == 0 and computer_choice == 1:
   print(user_choice_images[0], computer_choice_images[1], "Paper covers rock. You lose.")
