@@ -20,3 +20,9 @@ print(f"Your password is {sequential_pwd}")
 
 # Level 2:
 shuffled_pwd = ''
+pwd_list = list(sequential_pwd)
+random.shuffle(pwd_list)
+shuffled_pwd = ''.join(pwd_list)
+print(f"Your shuffled password is {shuffled_pwd}")
+
+# Ref: https://stackoverflow.com/questions/2668312/shuffle-string-in-python
