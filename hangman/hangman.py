@@ -6,7 +6,9 @@ word_list = [ 'bubble', 'dilemma', 'grounds', 'revoke', 'condition', 'photocopy'
 
 #TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 chosen_word = random.choice(word_list)
-placeholder = '_' * len(chosen_word)
+placeholder = ''
+for letter in chosen_word:
+  placeholder = placeholder + '_'
 print(chosen_word)
 print(placeholder)
 
