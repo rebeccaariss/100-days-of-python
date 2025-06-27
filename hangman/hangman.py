@@ -7,11 +7,11 @@ word_list = [ 'bubble', 'dilemma', 'grounds', 'revoke', 'condition', 'photocopy'
 #TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
-placeholder = ''
-for position in range(word_length):
-  placeholder += '_'
-# print(chosen_word)
-print(placeholder)
+# placeholder = ''
+# for position in range(word_length):
+#   placeholder += '_'
+# # print(chosen_word)
+# print(placeholder)
 
 #TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
 # guess = input('Please guess a letter: ').lower()
@@ -24,19 +24,19 @@ print(placeholder)
 # else:
 #   print("No")
 
-display = ''
-for letter in chosen_word:
-  display += '_'
+display = ['_'] * word_length
+print(f"\n{' '.join(display)}")
 
 while '_' in display:
   guess = input('Please guess a letter: ').lower()
-  for letter in chosen_word:
-    if letter == guess:
-      display += letter
-    else:
-      display += '_'
-  print(display)
 
+  for index in range(word_length):
+    if chosen_word[index] == guess:
+      display[index] = guess
+
+  print(f"\n{' '.join(display)}")
+
+print(f"Congratulations! You guessed the word {chosen_word} correctly after x guesses")
 # 
   #TODO-4 - Create a "placeholder" with the same number of blanks as the chosen_word
   #TODO-5 - Create a "display" that puts the guess letter in the right position
