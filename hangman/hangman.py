@@ -10,11 +10,11 @@ word_length = len(chosen_word)
 placeholder = ''
 for position in range(word_length):
   placeholder += '_'
-print(chosen_word)
+# print(chosen_word)
 print(placeholder)
 
 #TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
-guess = input('Please guess a letter: ').lower()
+# guess = input('Please guess a letter: ').lower()
 
 #TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
 # if guess in chosen_word:
@@ -25,14 +25,18 @@ guess = input('Please guess a letter: ').lower()
 #   print("No")
 
 display = ''
-
 for letter in chosen_word:
-  if letter == guess:
-    display += letter
-  else:
-    display += '_'
+  display += '_'
 
-print(display)
+while '_' in display:
+  guess = input('Please guess a letter: ').lower()
+  for letter in chosen_word:
+    if letter == guess:
+      display += letter
+    else:
+      display += '_'
+  print(display)
+
 # 
   #TODO-4 - Create a "placeholder" with the same number of blanks as the chosen_word
   #TODO-5 - Create a "display" that puts the guess letter in the right position
